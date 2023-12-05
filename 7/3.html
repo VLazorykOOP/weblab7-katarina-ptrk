@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browser Type</title>
+</head>
+<body>
+
+    <form id="myForm">
+        <button type="button" onclick="runTask()">Run Task</button>
+        <textarea id="output" rows="4" cols="50" readonly></textarea>
+    </form>
+
+    <script>
+        function runTask() {
+            //get browser type
+            var browserType = detectBrowser();
+            
+            //display the browser type in the textarea
+            document.getElementById('output').value = "Current Browser Type: " + browserType;
+
+            //you can use alert to display the information in a popup
+            //alert("Current Browser Type: " + browserType);
+            
+            //or log to the console
+            //console.log("Current Browser Type: " + browserType);
+        }
+
+        function detectBrowser() {
+            var userAgent = navigator.userAgent;
+            
+            if (userAgent.indexOf("Chrome") != -1) {
+                return "Google Chrome";
+            } else if (userAgent.indexOf("Firefox") != -1) {
+                return "Mozilla Firefox";
+            } else if (userAgent.indexOf("Safari") != -1) {
+                return "Apple Safari";
+            } else if (userAgent.indexOf("MSIE") != -1 || userAgent.indexOf("Trident/") != -1) {
+                return "Internet Explorer";
+            } else if (userAgent.indexOf("Edge") != -1) {
+                return "Microsoft Edge";
+            } else {
+                return "Unknown Browser";
+            }
+        }
+    </script>
+
+</body>
+</html>

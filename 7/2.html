@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+    <style>
+        .highlight {
+            color: red;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function onClickEvent(element) {
+            alert("Element clicked: " + element.tagName);
+            element.classList.toggle('highlight');
+        }
+
+        function onDoubleClickEvent(element) {
+            alert("Element double-clicked: " + element.tagName);
+            element.classList.toggle('italic');
+        }
+
+    </script>
+</head>
+<body>
+
+    <h1 onclick="onClickEvent(this)" ondblclick="onDoubleClickEvent(this)">Heading 1</h1>
+    <h2 onclick="onClickEvent(this)" ondblclick="onDoubleClickEvent(this)">Heading 2</h2>
+    <b onclick="onClickEvent(this)" ondblclick="onDoubleClickEvent(this)">Bold Text</b>
+    <i onclick="onClickEvent(this)" ondblclick="onDoubleClickEvent(this)">Italic Text</i>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+.text { 
+	font-family: 'Comic Sans MS';
+	color: white;
+	text-indent: 5%;
+	letter-spacing: -1px;
+	word-spacing: 4px;
+	font-variant: small-caps slashed-zero;
+}
+.logo {
+	width: 200px;
+	height: auto; 
+	margin: 10px 10px;
+}
+hr {
+	height: 3px;
+	background-color: #666a74;
+	border: 0;
+}
+.button_top {
+	background-color: rgba(59, 57, 92, 0.6);
+	border-radius: 5px;
+	font-family: 'Comic Sans MS';
+	color: #D3DAE3;
+	margin: 30px 20px;
+	text-transform: uppercase;
+	font-size: 2.5em;
+	width:280px;
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	min-width: 200px;
+	max-width: 280px;
+}
+label{
+	width: 150px;
+	text-align: right;
+}
+
+nav {
+	background-color: rgba(102,106,116,0.6);
+	text-align: center;
+}
+marquee {
+	color: #D3DAE3;
+	font-size: 20px;
+}
+table {
+	color: #D3DAE3;
+	font-size: 20px;
+	margin: auto;
+	border-width: medium;
+	border-left-width:medium; 
+	border-bottom-width:medium;
+	border-left-color: white;
+	border-top-color: white;
+	border-color: white;
+	border-right-style: dotted;
+	border-left-style: solid;
+	border-top-style: ridge;
+	float: center;
+	clear: both;
+	caption-side: bottom;
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: separate;
+	empty-cells: hide;
+}
+td {
+   border-right-style: dotted;
+   border-width: 3px;
+   border-right-color: red;
+}
+footer {
+	text-align: center;
+}
+small {
+	color:#D3DAE3;
+	font-family:'Verdana';
+}
+div {
+	border: double; 
+	background-color: #404552;
+	opacity: 0.75;
+	margin-left: 1%;
+	width: 40%;
+	display: inline-table;
+	columns: 3;
+	widows: 2;
+	orphans: initial;
+}
+span {
+	color: #D3DAE3;
+}
+p {
+	font-size: 20px;
+}
+h1 {
+	font-size: 25px;
+	text-align: center;
+	visibility: visible;
+}
+form {
+	width: 20%;
+	margin: 0 auto;
+	text-align: center; 
+}
+summary {
+	text-align: center;
+	font-size: 30px;
+}
+button {
+	padding: 0px 37px; 
+	margin: 0 auto; 
+	display: block; 
+	text-align: center; 
+	color: #ffffff; 
+	background-color: #6B67AB; 
+	font-size: 45px; 
+	height: 81px;
+}
+th {
+background-color:#51545c;
+}
+tr {
+text-align: center;
+}
+
+
+article:first-child p {
+	font-size: 25px;
+}
+article:last-child p {
+	font-size: 25px;
+}
+:visited { color: white}
+
+dd:first-line { color: red}
+
+img {
+	clip: shape;
+}
+
+body {
+	 background-attachment: fixed;
+	 background-position: center;
+	 background: url(wallpaper.jpg);
+}
+
+ul li {
+	color: red;
+	list-style: square;
+}
+
+p > dfn { color:red }
+
+input:invalid {
+  background-color: pink;
+}

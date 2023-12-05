@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis</title>
+</head>
+<body>
+
+    <form id="searchForm">
+        <label for="textInput">Enter Text:</label>
+        <input type="text" id="textInput" />
+        <button type="button" onclick="searchInformation()">Search Information</button>
+    </form>
+
+    <div id="result">
+       
+    </div>
+
+    <script>
+        function searchInformation() {
+            var inputText = document.getElementById('textInput').value;
+
+            var wordCount = inputText.split(/\s+/).length;
+
+            var kToOWords = inputText.match(/к(.*?)о/g);
+
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = "Number of Words: " + wordCount + "<br>";
+            
+			
+			// Find the number of digits
+            var digitCount = inputText.replace(/\D/g, '').length;
+
+            // Find integers
+            var integers = inputText.match(/(?:^|\s)([+-]?\d+)(?=\s|$)/g);
+
+            // Display the results
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = "Number of Words: " + wordCount + "<br>";
+
+            if (kToOWords) {
+                resultDiv.innerHTML += "Words that start with 'к' and end with 'о': " + kToOWords.join(', ') + "<br>";
+            } else {
+                resultDiv.innerHTML += "No words found that start with 'к' and end with 'о'.<br>";
+            }
+
+            resultDiv.innerHTML += "Number of Digits: " + digitCount + "<br>";
+
+            if (integers) {
+                resultDiv.innerHTML += "Integers: " + integers.join(', ');
+            } else {
+                resultDiv.innerHTML += "No integers found.";
+            }
+			
+        }
+    </script>
+
+</body>
+</html>

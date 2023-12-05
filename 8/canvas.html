@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head lang="uk">
+<script>
+
+var x1 = 0, x2 = 0;
+var y1 = 0, y2 = 0;
+var inp, angle = 0;
+var color = "blue"; 
+
+function Clear() {
+	const canvas = document.getElementById("canvas");
+	const context = canvas.getContext("2d");
+        context.beginPath();
+	context.clearRect(0, 0, canvas.width, canvas.height);
+        context.stroke();
+} 
+
+function figureUp() {
+inp = document.getElementById("forFirstFigure").value;
+inp = parseInt(inp, 10);
+if(inp == '') {
+  inp = 10;
+  }
+y1 -= inp;
+Clear();
+Draw();
+}
+
+function figureDown() {
+inp = document.getElementById("forFirstFigure").value;
+inp = parseInt(inp, 10);
+if(inp == '') {
+  inp = 10;
+  }
+y1 += inp;
+Clear();
+Draw();
+}
+
+function figureLeft() {
+inp = document.getElementById("forFirstFigure").value;
+inp = parseInt(inp, 10);
+if(inp == '') {
+  inp = 10;
+  }
+x1 -= inp;
+Clear();
+Draw();
+}
+function figureRight() {
+inp = document.getElementById("forFirstFigure").value;
+inp = parseInt(inp, 10);
+if(inp == '') {
+  inp = 10;
+  }
+x1 += inp;
+Clear();
+Draw();
+}
+
+
+function EllipseLeft() {
+inp = document.getElementById("EllipseFigure").value;
+inp = parseInt(inp, 10);
+if(inp == '') {
+  inp = 10;
+  }
+angle += inp;
+Clear();
+Draw();
+}
+
+function EllipseRight() {
+inp = document.getElementById("EllipseFigure").value;
+inp = parseInt(inp, 10);
+if(inp == '') {
+  inp = 1;
+  }
+angle -= inp;
+Clear();
+Draw();
+}
+
+function ChangeColor() {
+color = document.getElementById("ChangeColor").value;
+if(color == "") {
+  color = "blue";
+  }
+Clear();
+Draw();
+}
+
+function Draw() {
+	   const canvas = document.getElementById("canvas");
+	   const context = canvas.getContext("2d");
+	   context.beginPath();
+	   context.fillStyle = "black";
+           context.strokeStyle = "black";
+           context.moveTo(10,475);
+           context.lineTo(1390,475);   //x line
+           context.moveTo(1380,465);   //x arrow 
+           context.lineTo(1390,475);   //
+           context.lineTo(1380,485);   //
+           context.moveTo(400,20);     //y line
+           context.lineTo(400,780);    //
+           context.moveTo(410,30);     //y arrow
+           context.lineTo(400,20);     //
+           context.lineTo(390,30);     //
+           context.moveTo(550,455);    // x1
+           context.lineTo(550,495);    //
+           context.moveTo(700,455);    // x2
+           context.lineTo(700,495);    //
+           context.moveTo(850,455);    // x3
+           context.lineTo(850,495);    //
+           context.moveTo(1000,455);   // x4
+           context.lineTo(1000,495);   //
+           context.moveTo(1150,455);   // x5
+           context.lineTo(1150,495);   //
+           context.moveTo(1300,455);   // x6
+           context.lineTo(1300,495);   //
+           context.moveTo(380,325);    // y1
+           context.lineTo(420,325);    //
+           context.moveTo(380,175);    // y2
+           context.lineTo(420,175);    //
+           context.moveTo(380,625);    // -y1
+           context.lineTo(420,625);    //
+           context.moveTo(380,775);    // -y2
+           context.lineTo(420,775);    //
+           context.stroke();
+           context.closePath();
+           context.font = "20px Arial";
+		   
+		   context.fillText("0", 405, 465); //x numbers text
+		   context.fillText("1", 555, 465);
+		   context.fillText("2", 705, 465);
+		   context.fillText("3", 855, 465);
+		   context.fillText("4", 1005, 465);
+		   context.fillText("5", 1155, 465);
+		   context.fillText("6", 1305, 465);
+		   context.fillText("X", 1375, 465);
+		   
+           context.fillText("2", 385, 195); //numbers y text
+           context.fillText("1", 385, 350); 
+           context.fillText("-1", 380, 645); 
+           context.fillText("-2", 380, 759); 
+           context.fillText("Y", 370, 30);
+		   
+           context.beginPath()
+		   context.fillStyle = color; //rectangles
+           context.strokeStyle = color;
+           context.fillRect(550,25,150,150);
+           context.fillRect(1000+x1,25+y1,150,150);
+           context.fillRect(1000,475,150,150);
+           context.fillRect(550,475,150,150);
+           context.fillRect(1150,625,150,150);
+		   context.fillRect(400,625,150,150);
+		   context.fillRect(550,175,600,150);
+           
+           //context.ellipse(475, 400, 75, 75, 9, 0);
+           context.moveTo(850, 625); //circle and ellipses
+		   context.arc(850, 625, 150, 0, 2 * Math.PI);
+           context.moveTo(250, 475);
+           context.arc(250, 475, 150, 0, 2* Math.PI);
+           context.moveTo(850,475);
+           context.ellipse(850, 400, 300, 75, 0+angle, 0, 50);
+           context.fill();
+		   context.stroke();
+           context.closePath();
+}
+
+
+
+
+   window.onload = function() {
+   Draw();
+        	    
+   }
+</script>
+<style>
+   canvas { border: 1px dashed red; }
+</style>
+
+
+</head>
+<body style=" background: url(wallpaper.jpg)">
+<hr>
+<button onclick="Clear()">Clear</button>
+<button onclick="Draw()">Draw</button>
+<br>
+<div style="float: left">
+<h3 style="color: black; text-align: center">For rectangle</h3>
+<button onclick="figureUp()" style="margin-left: 43px;">⬆️</button>
+<br><button onclick="figureLeft()">⬅️</button>
+<input type="number" value="10" step="5" style="width: 40px" id="forFirstFigure">
+<button onclick="figureRight()">➡️</button><br>
+<button style="margin-left: 43px;" onclick="figureDown()">⬇️</button>
+</div>
+<div style="margin-left: 25px; float: left">
+<h3 style="color: black; text-align: center">For Ellipse</h3>
+<br>
+<button onclick="EllipseLeft()">⬅️</button>
+<input type="number" value="3" step="1" style="width: 40px" id="EllipseFigure">
+<button onclick="EllipseRight()">➡️</button><br>
+</div>
+<div style="margin-left: 25px; float: left">
+<h3 style="color: black; text-align: center">Color for figures</h3>
+<br>
+
+<input type="text" value="blue" style="width: 80px" id="ChangeColor">
+<button onclick="ChangeColor()">chAngE</button><br>
+</div>
+<canvas id="canvas" width="1400" height="800"></canvas>
+
+<script>
+
+</script>
+</body>
+
+</html>

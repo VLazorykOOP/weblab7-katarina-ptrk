@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+    <style>
+        img {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="1.jpg" alt="Image 1" id="image1" onmouseover="showImageInfo('Image 1')">
+    <img src="2.jpg" alt="Image 2" id="image2" onmouseover="showImageInfo('Image 2')">
+    <img src="3.jpg" alt="Image 3" id="image3" onmouseover="showImageInfo('Image 3')">
+
+    <script>
+        function showImageInfo(imageAlt) {
+            alert("Mouseover on: " + imageAlt);
+            // You can perform other actions here, such as changing the image source or any other desired behavior.
+        }
+    </script>
+
+</body>
+</html>

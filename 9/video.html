@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head lang="uk">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="styles.css">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+<title>Audio/Video</title>
+
+<script>
+function ChangeAudio() {
+var source = document.getElementById("audioSource");
+var player = document.getElementById("audioPlayer");
+player.src=source.value;
+player.play();
+}
+
+function ChangeVideo() {
+var source = document.getElementById("videoSource");
+var player = document.getElementById("videoPlayer");
+player.src=source.value;
+player.play();
+}
+
+</script>
+
+</head>
+<body style=" background: url(wallpaper.jpg)">
+<hr>
+<div style="float: left; text-align: center">
+<h2 class="text">Audio</h2>
+<audio id="audioPlayer" controls autoplay loop>
+Audio tag not supported
+<source src="The Coffee.mp3" type="audio/mp3">
+</audio>
+<form>
+<select id="audioSource" onchange="ChangeAudio()">
+ <option value="The Coffee.mp3" selected>The Coffee</option>
+ <option value="Drop - Granat.mp3">Drop - Granat</option>
+ <option value="Say Goodbye.mp3">Say Goodbye</option>
+ <option value="Triage at Dawn.mp3">Triage at Dawn</option>
+</select>
+</form>
+</div>
+
+<div style="float: left; text-align: center">
+<h2 class="text">Video</h2>
+<video id="videoPlayer" controls poster="1.png" style="width: 80%;">
+<source src="1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+<source src="2.ogv" type='video/ogg; codecs="theora, vorbis"'>
+<source src="3.webm" type='video/webm; codecs="vp8, vorbis"'>
+Tag video not supported
+</video>
+<form>
+<select id="videoSource" onchange="ChangeVideo()">
+  <option value="1.mp4" selected>First video (mp4)</option>
+  <option value="2.ogv">Second video (ogv)</option>
+  <option value="3.webm">Third video (webm)</option>
+</select>
+</form>
+</div>
+
+
+</body>
+</html>

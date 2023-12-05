@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Task</title>
+</head>
+<body>
+
+    <form id="arrayForm">
+        <button type="button" onclick="arrayTask()">Array Task</button>
+        <textarea id="arrayOutput" rows="4" cols="50" readonly></textarea>
+    </form>
+
+    <script>
+        function arrayTask() {
+            var N = parseInt(prompt("Enter the size of the array (N):"));
+
+            var A = [];
+			var B = [];
+
+            for (var i = 0; i < N; i++) {
+                A[i] = Math.floor(Math.random() * 20) - 10;
+            }
+
+
+            console.log("Original Array:", A);
+
+            B = A.filter(function (element) {
+                return element <= 0;
+            });
+
+
+            console.log("Modified Array (removed positive elements):", A);
+			
+            var arrayOutput = document.getElementById('arrayOutput');
+            arrayOutput.value = "Original Array: " + A.join(', ') + "\n";
+            arrayOutput.value += "Modified Array (removed positive elements): " + B.join(', ');
+
+           
+            //alert("Original Array: " + A.join(', ') + "\nModified Array (removed positive elements): " + A.join(', '));
+        }
+    </script>
+
+</body>
+</html>
